@@ -96,18 +96,18 @@ pub mod functions {
     use crate::sql_types::*;
     use diesel::sql_types::*;
 
-    sql_function!(fn subltree(ltree: Ltree, start: Int4, end: Int4) -> Ltree);
-    sql_function!(fn subpath(ltree: Ltree, offset: Int4, len: Int4) -> Ltree);
+    define_sql_function!(fn subltree(ltree: Ltree, start: Int4, end: Int4) -> Ltree);
+    define_sql_function!(fn subpath(ltree: Ltree, offset: Int4, len: Int4) -> Ltree);
     // sql_function!(fn subpath(ltree: Ltree, offset: Int4) -> Ltree);
-    sql_function!(fn nlevel(ltree: Ltree) -> Int4);
+    define_sql_function!(fn nlevel(ltree: Ltree) -> Int4);
     //sql_function!(fn index(a: Ltree, b: Ltree) -> Int4);
-    sql_function!(fn index(a: Ltree, b: Ltree, offset: Int4) -> Int4);
-    sql_function!(fn text2ltree(text: Text) -> Ltree);
-    sql_function!(fn ltree2text(ltree: Ltree) -> Text);
-    sql_function!(fn lca(ltrees: Array<Ltree>) -> Ltree);
+    define_sql_function!(fn index(a: Ltree, b: Ltree, offset: Int4) -> Int4);
+    define_sql_function!(fn text2ltree(text: Text) -> Ltree);
+    define_sql_function!(fn ltree2text(ltree: Ltree) -> Text);
+    define_sql_function!(fn lca(ltrees: Array<Ltree>) -> Ltree);
 
-    sql_function!(fn lquery(x: Text) -> Lquery);
-    sql_function!(fn ltxtquery(x: Text) -> Ltxtquery);
+    define_sql_function!(fn lquery(x: Text) -> Lquery);
+    define_sql_function!(fn ltxtquery(x: Text) -> Ltxtquery);
 }
 
 pub mod dsl {
